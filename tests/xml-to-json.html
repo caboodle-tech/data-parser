@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XML to JSON</title>
+    <script src="../data-parser.js"></script>
+</head>
+<body>
+    <article id="original">
+        <h1>Original XML</h1>
+        <div class="data"></div>
+    </article>
+    <article id="parsed">
+        <h1>Parsed JSON</h1>
+        <div class="data"></div>
+    </article>
+    <script>
+        const Parser = new DataParser();
+
+        const original = document.getElementById('original');
+        const parsed   = document.getElementById('parsed');
+
+        fetch('xml/sample.xml')
+            .then((res)=>{
+                res.text()
+                    .then((text) => {
+                        let pre = text.replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+                        original.querySelector('.data').innerHTML = `<pre>${pre}</pre>`;
+                        const {json, attributes} = Parser.xmlToJson(text, true);
+                        pre = '<strong>JSON</strong>\n\n';
+                        pre += JSON.stringify(json, null, 2)
+                        pre += '\n\n';
+                        pre += '<strong>Attributes</strong>\n\n';
+                        pre += JSON.stringify(attributes, null, 2);
+                        parsed.querySelector('.data').innerHTML = `<pre>${pre}</pre>`;
+                    })
+                    .catch((err)=>{
+                        console.error(err);
+                    });
+            })
+            .catch((err)=>{
+                console.error(err);
+            });
+    </script>
+</body>
+</html>

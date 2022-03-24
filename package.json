@@ -1,0 +1,11 @@
+{
+  "name": "cs701-homework",
+  "version": "1.0.0",
+  "description": "Linter setup for all my CS 701 homework.",
+  "author": "Christopher Keers",
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library location="8675309">
+    <books class="L">
+        <l subclass="L">
+            <book xmlns="urn:archive.org:books" xmlns:oclc="urn:OCLC:1157839927">
+                <title>Some Thoughts Concerning Education</title>
+                <author>John Locke</author>
+                <lccn:number>unk83010796</lccn:number>
+            </book>
+        </l>
+        <lt subclass="LC">
+            <book xmlns="urn:archive.org:books" xmlns:identifier="selfeducationor00robigoog">
+                <title>Self-Education: Or, the Value of Mental Culture</title>
+                <author>William Robinson</author>
+                <lccn:number></lccn:number>
+            </book>
+            <book xmlns="urn:archive.org:books" xmlns:identifier="cu31924022390532">
+                <title>The Moral Obligation to be Intelligent, and Other Essays</title>
+                <author>John Erskine</author>
+                <lccn:number></lccn:number>
+            </book>
+        </lt>
+    </books>
+</library>
